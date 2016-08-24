@@ -25,11 +25,24 @@ namespace _15Puzzle.Models
 
         public PuzzleModel()
         {
-            _cells = new int[SideLength, SideLength];
-            Reset();
+            InitCells();
+            FillCellsWithRandoms();
         }
 
-        public void Reset()
+
+        public PuzzleModel(int sideLength)// : this()
+        {
+            _sideLength = sideLength;
+            InitCells();
+            FillCellsWithRandoms();
+        }
+
+        private void InitCells()
+        {
+            _cells = new int[SideLength, SideLength];
+        }
+
+        public void FillCellsWithRandoms()
         {
             List<int> items = new List<int>();
 

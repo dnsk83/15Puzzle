@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_15Puzzle.Views.Menu"
+             Title="15 Puzzle"
+             Padding="8"
+             >
+  <TableView x:Name="tblMenu" Intent="Menu" >
+    <TableView.Root>
+      <TableSection Title="15 Puzzle">
+        <ViewCell x:Name="cellPlay">
+          <Label Text="Play"/>
+        </ViewCell>
+        <ViewCell x:Name="cellRestart">
+          <Label Text="Restart"/>
+        </ViewCell>
+        <ViewCell x:Name="cellSettings">
+          <Label Text="Settings"/>
+        </ViewCell>
+        <ViewCell>
+          <Label Text="Help"/>
+        </ViewCell>
+      </TableSection>
+    </TableView.Root>
+  </TableView>
+</ContentPage>

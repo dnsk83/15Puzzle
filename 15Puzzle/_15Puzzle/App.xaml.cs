@@ -4,16 +4,20 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using _15Puzzle.Models;
+using _15Puzzle.Views;
 
 namespace _15Puzzle
 {
     public partial class App : Application
     {
+        public PuzzleModel MainPuzzleModel;
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new _15Puzzle.MainPage();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

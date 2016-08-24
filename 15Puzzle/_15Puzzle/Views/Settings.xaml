@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_15Puzzle.Views.Settings"
+             BackgroundColor="Black"
+             Title="Settings">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Teal"/>
+        <Setter Property="TextColor" Value="White"/>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <AbsoluteLayout >
+    <Button Text="3x3" 
+            AbsoluteLayout.LayoutBounds=".5, .2, 90, 90"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Clicked="Button33_OnClicked"
+            />
+    <Button Text="4x4"  
+            AbsoluteLayout.LayoutBounds=".5, .45, 120, 120"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Clicked="Button44_OnClicked"
+            />
+    <Button Text="5x5" 
+            AbsoluteLayout.LayoutBounds=".5, .83, 160, 160"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Clicked="Button55_OnClicked"
+            />
+  </AbsoluteLayout>
+</ContentPage>
