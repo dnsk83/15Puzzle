@@ -2,9 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="_15Puzzle.Views.Menu"
-             Title="15 Puzzle"
-             Padding="8"
+             Title="Menu"
              >
+
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="4,20,0,0"
+                Android="8,24,8,8"
+                  />
+  </ContentPage.Padding>
+  
   <TableView x:Name="tblMenu" Intent="Menu" >
     <TableView.Root>
       <TableSection Title="15 Puzzle">
@@ -23,4 +30,5 @@
       </TableSection>
     </TableView.Root>
   </TableView>
+  
 </ContentPage>

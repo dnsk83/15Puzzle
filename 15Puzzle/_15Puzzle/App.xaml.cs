@@ -13,6 +13,14 @@ namespace _15Puzzle
     {
         public PuzzleModel MainPuzzleModel;
 
+        public int MaxPuzzleSize
+        {
+            get
+            {
+                return 5; // Magic
+            }
+        }
+
         public App()
         {
             InitializeComponent();

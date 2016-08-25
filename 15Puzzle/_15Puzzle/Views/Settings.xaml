@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customControls="clr-namespace:_15Puzzle.CustomControls;assembly=_15Puzzle"
              x:Class="_15Puzzle.Views.Settings"
              BackgroundColor="Black"
              Title="Settings">
+  
   <ContentPage.Resources>
     <ResourceDictionary>
       <Style TargetType="Button">
@@ -12,21 +14,72 @@
       </Style>
     </ResourceDictionary>
   </ContentPage.Resources>
-  <AbsoluteLayout >
-    <Button Text="3x3" 
-            AbsoluteLayout.LayoutBounds=".5, .2, 90, 90"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            Clicked="Button33_OnClicked"
+
+  <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+    <customControls:SquareLayout>
+      
+      <Grid HorizontalOptions="CenterAndExpand" 
+            VerticalOptions="CenterAndExpand" 
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            AbsoluteLayout.LayoutFlags="SizeProportional"
+            >
+      
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width=".2*"/>
+          <ColumnDefinition Width=".6*"/>
+          <ColumnDefinition Width=".2*"/>
+        </Grid.ColumnDefinitions>
+      
+        <Grid.RowDefinitions>
+          <RowDefinition Height=".2*"/>
+          <RowDefinition Height=".6*"/>
+          <RowDefinition Height=".2*"/>
+        </Grid.RowDefinitions>
+        
+        <Label Grid.Row="0" Grid.Column="1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Text="Field size"
+               TextColor="White"
+               FontSize="Large"
+               />
+
+        <Grid x:Name="grdSize"
+              BackgroundColor="White"
+              Grid.Row="1"
+              Grid.Column="1"
+              RowSpacing="1"
+              ColumnSpacing="1"
+              Padding="1"
             />
-    <Button Text="4x4"  
-            AbsoluteLayout.LayoutBounds=".5, .45, 120, 120"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            Clicked="Button44_OnClicked"
-            />
-    <Button Text="5x5" 
-            AbsoluteLayout.LayoutBounds=".5, .83, 160, 160"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            Clicked="Button55_OnClicked"
-            />
-  </AbsoluteLayout>
+        
+        <Stepper 
+          x:Name="stprSize"
+          HorizontalOptions="Center"
+          VerticalOptions="Center"
+          Minimum="3" 
+          Maximum="5" 
+          Increment="1" 
+          Value="4" 
+          Grid.Row="2" 
+          Grid.Column="1"
+          ValueChanged="Stepper_OnValueChanged"
+        />
+        
+        <BoxView BackgroundColor="Transparent" Grid.Row="2" Grid.Column="2"/>
+        
+      </Grid>
+
+    </customControls:SquareLayout>
+
+    <Button
+      Text="Apply"
+      HorizontalOptions="Center"
+      VerticalOptions="Center"
+      Clicked="BtnApply_OnClicked"
+      />
+    
+  </StackLayout>
+  
 </ContentPage>

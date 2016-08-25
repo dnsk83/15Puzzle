@@ -1,15 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:_15Puzzle"
+             xmlns:local="clr-namespace:_15Puzzle.CustomControls;assembly=_15Puzzle"
              x:Class="_15Puzzle.Views.Game"
              BackgroundColor="Black"
              Title="The 15 puzzle">
 
-<StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Black" Padding="20">
-  
-  <Grid x:Name="grdPuzzle" ColumnSpacing="2" RowSpacing="2" WidthRequest="320" HeightRequest="320" />
-
+<StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="20">
+  <local:SquareLayout>
+    <Grid x:Name="grdPuzzle" 
+          ColumnSpacing="2" 
+          RowSpacing="2" 
+          AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+          AbsoluteLayout.LayoutFlags="SizeProportional"/>
+  </local:SquareLayout>
 </StackLayout>
 
 </ContentPage>
